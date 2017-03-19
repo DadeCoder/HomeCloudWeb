@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <link rel="stylesheet" href="http://apps.bdimg.com/libs/bootstrap/3.2.0/css/bootstrap.min.css">
+        <script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+        <!-- <script src="http://cdn.bootcss.com/angular-ui-bootstrap/0.11.2/ui-bootstrap-tpls.js"></script> -->
+        <script src="js/house/ui-bootstrap-tpls.js"></script>
+    </head>
+    <body ng-app="myApp" style="backgound: #4a4a4a; overfolw: hidden;" class="row">
+        <section class="row">
+            <section class="col-md-6" style="margin: 40px auto;float: none; background: #fff; padding: 30px;" ng-controller="pageDemo">
+                <ul>
+                    <li ng-repeat="x in pageData">{{ x }}</li>
+                </ul>
+                <pagination total-items="bigTotalItems" ng-change="showItems()" ng-model="bigCurrentPage" items-per-page="itemSize" max-size="maxSize" force-ellipses="true" class="pagination-sm" rotate="false" boundary-links="true" num-pages="numPages"></pagination>
+                <br>
+                <a class="btn btn-primary">总共：{{ numPages }}页</a>
+            </section>
+        </section>
+    </body>
+    <script>
+        angular.module('myApp', ['ui.bootstrap'])
+        .controller('pageDemo', function($scope) {
+            $scope.data = ['aaaa','bbbb','cccc','dddd','ffff','eeee','gggg','hhhh','jjjj','ssss','yyyy','uuuu','iiii','oooo'];
+            $scope.maxSize = 3; //可点击的页码个数
+            $scope.numPages = $scope.data.length; //总页码数
+            $scope.itemSize = 3; //每页条目数
+            $scope.bigTotalItems = $scope.data.length; // bigTotalItems/items-per-page(每页最大条目数) 位总页码数
+            // $scope.bigCurrentPage = 1; //初始时被选中的页码
+            $scope.pageData = $scope.data.slice(0, $scope.itemSize);
+            $scope.showItems = function() {
+                $scope.pageData = $scope.data.slice(($scope.bigCurrentPage-1)*$scope.itemSize, ($scope.bigCurrentPage-1)*$scope.itemSize + $scope.itemSize)
+            }
+        })
+
+        /*
+        boundary-links (Default: false) 是否显示：第一个/最后一个 按钮;
+        boundary-link-numbers (Default: false) 是否总是显示第一个和最后一个页码。如果最大页码大于设置的最小显示页数,则会在最大或最小页面和中间页面之间增加一个按钮，内容为省略号，如果最大页码小于设置的最小显示页数，则不显示省略号按钮 ;
+        direction-links (Default: true) 是否显示：上一个/下一个 按钮;
+        first-text (Deauflt: first) 第一个按钮的文本;
+        last-text (Default: Last)
+        previous-text (Default: Previous)
+        next-text (Default: Next)
+        force-ellipses (Default: false) 当总页数大于最大显示页数时(max-size)时显示省略号;
+        items-per-page (Defult: 10) 每页最大显示条目的数量，值小于1时表明所有条目在一页上;
+        max-size (Default: null) 分页按钮显示的数量（可点击到的页码数字）;
+        ng-change 点击分页按钮触发的方法，可用于更改不同页面数据;
+        ng-disabled (Default: false) 用于禁用分页组件;
+        ng-model 当前页数. 第一页为1（即从1开始计算而不是0）;
+        num-pages (Default: angular.noop) 一个可选的配置，显示页面总数(这是个只读项，并不是可以通过设置页面数和当前页配置分页);
+        page-label (Default: angular.identity) 可选的表达式，以覆盖基于传递当前页面索引的页标签(替换页码数字);
+        rotate (Default: true) 是否将当前激活页显示在中间(设置为false，且max-size小于总页码数时会出现省略号点击按钮)。
+        template-url (Default: uib/template/pagination/pagination.html) 重写用于具有自定义模板提供的组件模板;
+        total-items 所有页中的项目总数
+        */
+    </script>
+</html>

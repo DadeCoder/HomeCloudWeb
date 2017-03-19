@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="test">
+<head>
+	<meta charset="UTF-8">
+	<title>HomePlus Test AngularJs</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	<div ng-controller="hello">
+		{{greeting.text}}
+	</div>
+
+	<div>
+		<dir></dir>
+	</div>
+
+	<div ng-controller="mo">
+		<input type="text" name="model" ng-model="greeting.text">
+		<p>{{greeting.text}}</p>
+		<p><span ng-bind="greeting.text"></span></p>
+		<p ng-bind="greeting.text"></p>
+	</div>
+
+	<div ng-controller="common">
+		<div ng-controller="pri1">
+			<p ng-bind=greeting.text></p>
+			<button ng-click="test1()">test1</button>
+		</div>
+		<div ng-controller="pri2">
+			<p ng-bind=greeting.text></p>
+			<button ng-click="test2()">test2</button>
+			<button ng-click="com()">common</button>
+		</div>
+		
+	</div>
+
+	<div>
+		<div ng-controller="GreetCrtl">
+			{{name}}
+		</div>
+		<div ng-controller="ListCtrl">
+			<ol>
+				<li ng-repeat="name in names">
+					{{name}} from {{department}}
+				</li>
+			</ol>
+		</div>
+	</div>
+
+	<div ng-controller="user">
+		
+		<form>
+			<input type="text" name="email" ng-model="userInfo.email">
+			<input type="password" name="password" ng-model="userInfo.password">
+			<input type="button" ng-click="getFormatData()" value="get">
+			<input type="button" ng-click="setFormatData()" value="set">
+		</form>
+
+	</div>
+
+	<div ng-controller="userInfo">{{userInfo}}</div>
+
+
+
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script src="lib/angular/angular.js"></script>
+	<script src="js/homeplus-test.js"></script>
+</body>
+</html>

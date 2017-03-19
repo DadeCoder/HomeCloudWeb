@@ -1,0 +1,20 @@
+<div class="jumbotron" style="padding-top: 0" ng-controller="scheduleCtrl">
+	<div class="container">
+		<div class="row">
+			<div class="page-header">
+				<h3>您的看房行程数量为：<small>{{scheduleNo}}</small></h3>
+			</div>
+		</div>
+		<div>
+			<div ng-repeat="person in list">
+				<div class="well row col-md-3 col-md-offset-4">
+                	<div>{{person.name}}</div>
+                	<div>{{person.age}}</div>
+            	</div>
+			</div>
+			<div class="well row col-md-5 col-md-offset-4" style="text-align: center;">
+				<h2>{{zero}}</h2>
+			</div>
+		</div>
+	</div>
+</div>

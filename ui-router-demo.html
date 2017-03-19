@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/angular/angular-route.js"></script>
+	<script src="lib/router/app.js"></script>
+	<script src="lib/router/hello.js"></script>
+	<script src="lib/router/about.js"></script>
+</head>
+	
+	<body ng-app="routingApp">
+        <header>
+            <a href="#/hello">Hello</a>
+            <a href="#/about">About</a>
+        </header>
+        <!-- Place where our view will be displayed -->
+        <div ng-view>
+        </div>
+    </body>
+
+
+</html>

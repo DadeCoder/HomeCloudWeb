@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="tsss">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+	<div class="container" ng-controller="tsCtrl">
+		<div class="row">
+			<span ng-bind="info.t1"></span>
+			<button ng-click="getT1()">getT1</button>
+		</div>
+		<div class="row">
+			<span ng-bind="info.t2"></span>
+			<button ng-click="getT2()">getT2</button>
+		</div>
+	</div>
+	
+
+	<script src="lib/jquery-1.9.1.js"></script>
+	<script src="lib/angular-1.3.0.14/angular.js"></script>
+	<script src="lib/angular-ui-router.js"></script>
+	<script>
+		
+
+	angular.module("tsss",[])
+
+.config(function($httpProvider) {
+    $httpProvider.defaults.headers.common["X-Requested-With"] = 'XMLHttpRequest';
+})
+
+
+		.controller("tsCtrl",function($scope, $http){
+			$scope.getT1 = function(){
+
+				//var h = {authorization: "Basic MTIzNDU1OjEyMzQ1Ng=="};
+
+				$http.get('http://localhost:8090/api/purchaser/getInfo/', {withCredentials: true}).then(function(response) {
+					console.log(response.data);
+					$scope.info = {
+					 t1 : response.data
+					};
+				});
+
+				
+			};
+
+			$scope.getT2 = function(){
+				$http.get('http://localhost:8090/test__2/',{withCredentials: true}).then(function(response) {
+					console.log(response.data);
+					$scope.info = {
+					 t2 : response.data
+					};
+				});
+			};
+
+
+		})
+
+	</script>	
+</body>
+</html>

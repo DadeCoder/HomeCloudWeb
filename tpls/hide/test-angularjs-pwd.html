@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>register</title>
+<link rel="stylesheet"
+    href="http://apps.bdimg.com/libs/bootstrap/3.3.4/css/bootstrap.css">
+<script src="http://apps.bdimg.com/libs/angular.js/1.4.6/angular.min.js"></script>
+<script>
+    var app = angular.module('myApp', []);
+    app.controller('registerCtrl', function($scope) {
+
+    });
+</script>
+</head>
+<body onload="document.getElementById('email').focus()">
+    <div class="col-sm-6 col-sm-offset-3" ng-app="myApp"
+        ng-controller="registerCtrl">
+        <h1>用户注册</h1>
+        <form name="registerForm" novalidate>
+
+            <div>
+                <label>密码：</label>
+                <input type="password" name="oldPassword" class="form-control" required>
+            </div>
+
+            <div id="password-group">
+                <label for="password">密码：</label> <input type="password"
+                    class="form-control" ng-model="password" ng-minlength="6"
+                    ng-maxlength="20" name="password" id="password"
+                    required>
+                <p>
+                    <span style="color: red" ng-show="registerForm.password.$invalid">
+                        <span ng-show="registerForm.password.$error.minlength">*密码长度不小于6</span>
+                        <span ng-show="registerForm.password.$error.maxlength">*密码长度不超过20</span>
+                    </span>
+                </p>
+            </div>
+
+            <div id="passwordagaingroup">
+                <label for="passwordagain">再输入一遍密码：</label> <input type="password"
+                    class="form-control" ng-model="passwordagain" name="passwordagain"
+                    id="passwordagain" required>
+                <p>
+                    <span style="color: red" ng-show="registerForm.password.$valid">
+                        <span ng-show="passwordagain!=password">*两次密码输入不一致</span>
+                    </span>
+                </p>
+            </div>
+
+            <button type="submit" class="btn btn-success"
+                ng-disabled="registerForm.email.$invalid || registerForm.name.$invalid || registerForm.password.$invalid || password != passwordagain">
+                提交<span class="fa fa-arrow-right"></span>
+            </button>
+        </form>
+    </div>
+
+
+</body>
+</html>

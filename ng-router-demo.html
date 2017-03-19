@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="lib/angular/angular.js"></script>
+	<script src="lib/router/angular-ui-router.js"></script>
+	<script src="lib/router/app.js"></script>
+	<script src="lib/router/hello.js"></script>
+	<script src="lib/router/about.js"></script>
+</head>
+<body ng-app="routingApp">
+        <header>
+            <a ui-sref="hello">Hello</a>
+            <a ui-sref="about">About</a>
+        </header>
+        <!-- Place where our view will be displayed -->
+        <div ui-view>
+        </div>
+    </body>
+</html>

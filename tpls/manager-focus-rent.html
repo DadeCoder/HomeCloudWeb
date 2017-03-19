@@ -1,0 +1,19 @@
+<div class="container" ng-controller="focusRentCtrl">
+	<div class="row" style="margin-bottom: 20px">
+		<ul class="nav nav-pills">
+		  <li>
+		    <a ui-sref="focus-buy({bookType:5})">买房</a>
+		  </li>
+		  <li><a ui-sref="focus-sell({bookType:6})">卖房</a></li>
+		  <li class="active"><a ui-sref="focus-rent({bookType:7})">租房</a></li>
+		</ul>
+	</div>
+	<div ng-repeat="house in hlist">
+		<div class="row well col-md-9">
+			<div>{{house.pic}}</div>
+			<div>{{house.name}}</div>
+			<div>{{house.size}}</div>
+			<div>{{house.price}}</div>
+		</div>
+	</div>
+</div>

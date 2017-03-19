@@ -1,0 +1,23 @@
+<div class="container" ng-controller="indexUpCtrl">
+	<div class="row" style="margin-bottom: 20px">
+		<ul class="nav nav-tabs">
+		  <li role="presentation">
+		  	<a ui-sref="index-all({bookType:8})">全部</a>
+		  </li>
+		  <li role="presentation" class="active">
+		  	<a ui-sref="index-up({bookType:9})">升价</a>
+		  </li>
+		  <li role="presentation">
+		  	<a ui-sref="index-down({bookType:10})">降价</a>
+		  </li>
+		</ul>
+	</div>
+	<div ng-repeat="house in ilist">
+		<div class="row well col-md-9">
+			<div>{{house.pic}}</div>
+			<div>{{house.name}}</div>
+			<div>{{house.size}}</div>
+			<div>{{house.price}}</div>
+		</div>
+	</div>
+</div>

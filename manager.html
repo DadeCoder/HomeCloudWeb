@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="routerApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Test for HomePlus Manage</title>
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="lib/ng-grid-2.0.12/ng-grid.css" rel="stylesheet" >
+
+	<!-- <link href="css/type/font-awesome.css" rel="stylesheet"> -->
+
+<!-- 	<link href="css/images/cropper.min.css" rel="stylesheet"/>
+    <link href="css/images/main.css" rel="stylesheet"/>
+    <link href="css/images/bootstrap.min.css" rel="stylesheet"/> -->
+
+
+	<script src="lib/jquery-1.9.1.js"></script>
+<!-- 	<script src="lib/images/jquery.min.js"></script>
+	<script src="lib/images/bootstrap.min.js"></script> -->
+	<script src="lib/angular-1.3.0.14/angular.js"></script>
+	<script src="lib/angular-1.3.0.14/angular-animate.min.js"></script>
+	<script src="lib/angular-ui-router.js"></script>
+	<script src="lib/ui-bootstrap-tpls-0.11.0.js"></script>
+	<!-- http://blog.csdn.net/qianqianyixiao1/article/details/50622714 -->
+	<script src="lib/ng-grid-2.0.12/ng-grid.debug.js"></script>
+
+	<script src="js/manager/app.js"></script>
+    <script src="js/manager/animations.js"></script>
+    <script src="js/manager/controllers.js"></script>
+    <script src="js/manager/filters.js"></script>
+    <script src="js/manager/services.js"></script>
+
+<!--     <script src="js/images/cropper.min.js"></script>
+    <script src="js/images/main.js"></script> -->
+
+	<link rel="stylesheet" href="css/test-manger.css">
+</head>
+<body>
+	
+	<div class="container-fluid">
+		<div class="row">
+			<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
+    			<div class="container-fluid">
+    				<div class="navbar-header" style="margin-left: 100px">
+						 <a class="navbar-brand" href="#">HomePlus</a>
+    				</div>
+				    <div>
+				        <ul class="nav navbar-nav navbar-right" style="margin-right: 100px">
+				            <li class="active"><a href="#">个人中心</a></li>
+				            <li><a href="#">买房</a></li>
+				            <li><a href="#">卖房</a></li>
+				            <li><a href="#">租房</a></li>
+				            <li><a href="#">退出</a></li>
+				        </ul>
+				    </div>
+				</div>
+			</nav>
+		</div>
+	</div>
+
+	<div ui-view></div>
+
+</body>
+</html>
