@@ -55,11 +55,11 @@
 
 				    <div>
 				        <ul class="nav navbar-nav navbar-right" style="margin-right: 100px">
-				            <!-- <li><a href="./manager.html">个人中心</a></li> -->
-				            <li><a href="./purchar.html">买房</a></li>
-				            <li><a href="./sell.html">卖房·出租</a></li>
-				            <li class="active"><a href="./rent.html">租房</a></li>
-				            <!-- <li><a href="./index.html">退出</a></li> -->
+				            <li><a href="./manager.html">个人中心</a></li>
+				            <li class="active"><a href="./purchar_spe.html">买房</a></li>
+				            <li><a href="./sell_spe.html">卖房·出租</a></li>
+				            <li><a href="./rent_spe.html">租房</a></li>
+				            <li><a href="./index.html">退出</a></li>
 				        </ul>
 				    </div>
 				</div>
@@ -72,7 +72,7 @@
 		<div class="container panel panel-success top" style="padding:0" >
 
 			<div class="panel-heading">
-		        <h3 class="panel-title">全部租房</h3>
+		        <h3 class="panel-title">全部售房</h3>
 		    </div>
 
 			<div class="row panel-body" style="padding: 10px">
@@ -94,7 +94,7 @@
 
 			</div>
 			<div class="row panel-body" style="padding: 10px">
-				<span style="margin-left: 30px">租金：
+				<span style="margin-left: 30px">售价：
 					<a href="" class="text-success chose">不限</a>
 					<a href="" class="chose">500元以下</a>
 					<a href="" class="chose">500-1000元</a>
@@ -147,12 +147,12 @@
 		    <div ng-repeat="house in hlist">
 			    <div class="panel-body info">
 			        <div class="info-inner info-left col-md-3">
-			        	<a href="./login.html" class="thumbnail">
+			        	<a href="" class="thumbnail">
 	      					<img src="images/demo/portfolio-1.jpg">
 	    				</a>
 			        </div>
 			        <div class="info-inner info-mid col-md-6">
-			        	<h3><a href="./login.html">{{house.name}}</a></h3>
+			        	<h3><a href="">{{house.name}}</a></h3>
 			        	<b>{{house.address}} {{house.size}}平方米 {{house.geju}}</b>
 			        	<br>
 			        	<br>
@@ -208,7 +208,7 @@
 
 	<script src="lib/jquery-1.9.1.js"></script>
 	<script src="lib/angular-1.3.0.14/angular.js"></script>
-	<script src="js/rent.js"></script>
+	<script src="js/purchar.js"></script>
 	<!-- <script src="js/house/bootstrap-paginator.js"></script> -->
 	<script src="js/house/ui-bootstrap-tpls.js"></script>
 	
