@@ -139,6 +139,11 @@ bookListModule.controller('scheduleCtrl', function($scope, $http, $state, $state
 });
 
 
+bookListModule.controller('focusRentOutCtrl', function($scope, $http, $state, $stateParams) {
+    $scope.hlist = [{pic:"pic",name:"Rent",size:20,price:20}];
+
+});
+
 bookListModule.controller('focusRentCtrl', function($scope, $http, $state, $stateParams) {
     $scope.hlist = [{pic:"pic",name:"Rent",size:20,price:20}];
 

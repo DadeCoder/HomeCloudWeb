@@ -24,11 +24,15 @@ loginApp.controller('navigation', function($rootScope, $http, $location, $scope,
 				//console.log($scope.credentials.password);
 				console.log(h);
 
-				$http.get('http://localhost:8090/login/',{withCredentials: true,headers : h}).then(function(response) {
-					console.log(response.data);
-					// $window.location.href='/test_spring_sec.html'; 
-					$window.location.href='/index_spe.html'; 
-				});
+				$http.get('http://localhost:8090/login/',{withCredentials: true,headers : h})
+					.success(function(response) {
+						console.log(response.data);
+						// $window.location.href='/test_spring_sec.html'; 
+						$window.location.href='/index_spe.html'; 
+					})
+					.error(function(response) {
+						alert("Wrong account or password"); 
+					});
 
 			};
 		});

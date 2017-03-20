@@ -6,12 +6,12 @@
 		</div>
 		<div class="ad" style="text-align: center;margin-bottom: 30px">
 			<h2><b>发布出租房源</b></h2>
-			<span>8000+全国链家门店·10万+全国经纪人·链家倾情服务15年+</span>
+			<span>8000+全国HomePlus门店·10万+全国经纪人·HomePlus倾情服务15年+</span>
 		</div>
 	</div>
-<div class="container">
+<div class="container" ng-controller="rentCtrl">
 	<div class="row col-md-6 col-md-offset-3">
-		<form action="">
+		<form>
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">房屋小区</span>
 			  <input type="text" class="form-control input-lg" placeholder="请输入小区名" aria-describedby="basic-addon1">
@@ -32,7 +32,7 @@
 			  <span class="input-group-addon" id="basic-addon1">手机号码</span>
 			  <input type="text" class="form-control input-lg" placeholder="您的联系方式，方便我们及时与您联系" aria-describedby="basic-addon1">
 			</div>
-			<button class="btn btn-lg btn-success btn-block">提交委托</button>
+			<button class="btn btn-lg btn-success btn-block" type="button" ng-click="redir()">提交委托</button>
 		</form>
 	</div>
 </div>

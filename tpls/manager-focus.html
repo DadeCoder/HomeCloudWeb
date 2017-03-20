@@ -1,11 +1,12 @@
-<div class="container" ng-controller="focusCtrl">
+<div class="container" ng-controller="focusRentOutCtrl">
 	<div class="row" style="margin-bottom: 20px">
 		<ul class="nav nav-pills">
-		  <li class="active">
+		  <li>
 		    <a ui-sref="focus-buy({bookType:5})">买房</a>
 		  </li>
 		  <li><a ui-sref="focus-sell({bookType:6})">卖房</a></li>
 		  <li><a ui-sref="focus-rent({bookType:7})">租房</a></li>
+		  <li class="active"><a ui-sref="focus-rent-out">出租</a></li>
 		</ul>
 	</div>
 	<div ng-repeat="house in hlist">

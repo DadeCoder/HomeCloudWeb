@@ -20,3 +20,20 @@ sellApp.config(function($stateProvider, $urlRouterProvider) {
         })
 });
 
+sellApp.controller('rentCtrl',function($scope, $location, $window){
+
+    $scope.redir = function(){
+        $window.location.href='../login.html'; 
+    }
+
+});
+
+sellApp.controller('sellCtrl',function($scope, $location, $window){
+
+    $scope.redir = function(){
+        $window.location.href='../login.html'; 
+    }
+
+});
+
+
