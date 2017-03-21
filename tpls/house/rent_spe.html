@@ -11,7 +11,7 @@
 	</div>
 <div class="container">
 	<div class="row col-md-6 col-md-offset-3" ng-controller="rentOutCtrl">
-		<form>
+		<form enctype="multipart/form-data">
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">所在区域</span>
 			  <input type="text" class="form-control input-lg" placeholder="在广州哪个区" aria-describedby="basic-addon1" ng-model="house.district">
@@ -26,11 +26,11 @@
 			</div>
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">所在楼层</span>
-			  <input type="text" class="form-control input-lg" placeholder="在第几楼" aria-describedby="basic-addon1" ng-model="house.floor">
+			  <input type="number" class="form-control input-lg" placeholder="在第几楼" aria-describedby="basic-addon1" ng-model="house.floor">
 			</div>
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">房屋面积</span>
-			  <input type="text" class="form-control input-lg" placeholder="房屋面积有多大" aria-describedby="basic-addon1" ng-model="house.area">
+			  <input type="number" class="form-control input-lg" placeholder="房屋面积有多大(平方米)" aria-describedby="basic-addon1" ng-model="house.area">
 			</div>
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">房屋户型</span>
@@ -38,9 +38,14 @@
 			</div>
 			<div class="input-group ingp">
 			  <span class="input-group-addon" id="basic-addon1">期望租金</span>
-			  <input type="text" class="form-control input-lg" placeholder="请输入您期望租出的价格" aria-describedby="basic-addon1" ng-model="house.rentPrice">
+			  <input type="number" class="form-control input-lg" placeholder="请输入您期望租出的价格(每月元)" aria-describedby="basic-addon1" ng-model="house.rentPrice">
 			</div>
-			<button class="btn btn-lg btn-success btn-block" type="button" ng-click="rentOut()">提交委托</button>
+<!-- 			 <div class="row" style="height: 500px">
+           		<input id="file-Portrait1" type="file">
+    		</div> -->
+    		<!-- <input id="file" name="myfile" type="file" data-show-caption="true" ng-model="house.file">   -->
+			<button class="btn btn-lg btn-success btn-block" type="button" ng-click="rentOut()">下一步</button>
 		</form>
+
 	</div>
 </div>
