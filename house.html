@@ -14,7 +14,7 @@ overflow:hidden;
 </style>
 
 </head>
-<body>
+<body ng-controller="infoCtrl">
 	<div class="container-fluid">
 		<div class="row">
 			<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
@@ -48,7 +48,7 @@ overflow:hidden;
 
 	<div class="container subject jumbotron" style="padding-top: 10px">
 
-		<div class="container panel panel-success top" style="padding:0" ng-controller="infoCtrl">
+		<div class="container panel panel-success top" style="padding:0">
 
 			<div class="panel-heading">
   				<h2>{{house.community}}
@@ -63,7 +63,6 @@ overflow:hidden;
 			<div class="row panel-body" style="padding: 10px">
 				<div class="col-md-6">
 					<div class="thumbnail">
-				      <!-- <img src="../images/demo/portfolio-1.jpg" alt="..."> -->
 				      <img ng-src="{{picUrl}}">
 				    </div>
 				</div>
@@ -117,7 +116,7 @@ overflow:hidden;
 
 		</div>
 
-		<div class="container panel panel-success top" style="padding:0" ng-controller="infoCtrl">
+		<div class="container panel panel-success top" style="padding:0">
 
 			<div class="panel-heading">
   				<ul class="nav nav-pills">
@@ -140,13 +139,13 @@ overflow:hidden;
 					<div style="margin-top: 30px;margin-bottom:50px">
 						<h4>
 							<span class="text-success">租赁方式：</span>
+							<span class="text-info">{{house.rentWay}}</span>
+
+<!-- 							<span class="text-success col-md-offset-3">租赁方式：</span>
 							<span class="text-info">{{house.size}}</span>
 
 							<span class="text-success col-md-offset-3">租赁方式：</span>
-							<span class="text-info">{{house.size}}</span>
-
-							<span class="text-success col-md-offset-3">租赁方式：</span>
-							<span class="text-info">{{house.size}}</span>
+							<span class="text-info">{{house.size}}</span> -->
 						</h4>
 					</div>
 
@@ -157,11 +156,11 @@ overflow:hidden;
 					<div style="margin-top: 30px">
 						<h4>
 							<span class="text-success">投资分析：</span>
-							<span class="text-info">{{house.size}}</span>
+							<span class="text-info">{{house.analyze}}</span>
 						</h4>
 						<h4>
 							<span class="text-success">小区介绍：</span>
-							<span class="text-info">{{house.size}}</span>
+							<span class="text-info">{{house.communityInfo}}</span>
 						</h4>
 					</div>
 
@@ -184,6 +183,17 @@ overflow:hidden;
 		  					</small>
 		  				</h2>
 					</div>
+
+					<div ng-repeat="agent in house.agentList">
+						<h4>
+							<span class="text-success">姓名：</span>
+							<span class="text-info">{{agent.name}}</span>
+
+							<span class="text-success col-md-offset-3">联系方式：</span>
+							<span class="text-info">{{agent.phone}}</span>
+
+						</h4>
+					</div>
 				</div> <!-- contact end -->
 				
 			</div>  <!-- body end -->
@@ -205,18 +215,20 @@ overflow:hidden;
 					    </tr>
 
 					  </thead>
-					  <tbody>
-					    <tr>
-					      <td>Tanmay</td>
-					      <td>Bangalore</td>
-					      <td>560001</td>
-					    </tr>
-					  </tbody>
+					  	<tbody>
+						  
+						    <tr>
+						      <td>2017/3/10</td>
+						      <td>{{house.agentList[0].name}}</td>
+						      <td>{{house.agentList[0].phone}}</td>
+						    </tr>
+						
+						</tbody>
 					</table>
 					</div>
 
 				<div class="col-md-6">
-					总共带看次
+					总共带看1次
 				</div>
 				
 

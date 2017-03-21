@@ -14,7 +14,8 @@ houseApp.controller('infoCtrl', function($scope, $http, $window) {
        url:'http://localhost:8090/api/house/get/',
        method: 'get',  
        params:{
-		'houseId':houseId
+		'houseId':houseId,
+		'picUrl':picUrl
 	   },
        withCredentials: true
       }).success(function(response){
