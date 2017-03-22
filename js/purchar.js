@@ -1,7 +1,7 @@
 var purcharApp = angular.module("purcharApp",['ui.bootstrap']);
 
 
-purcharApp.controller('cdtCtrl', function($scope, $http) {
+purcharApp.controller('cdtCtrl', function($scope, $http, $window) {
 
 	$scope.condition = ["区域不限","售价不限","面积不限","房型不限","楼层不限"];
 
@@ -185,6 +185,12 @@ purcharApp.controller('cdtCtrl', function($scope, $http) {
 		 // replace方法是替换 
 		}; 
 	}; 
+
+	$scope.getSellHouse = function(houseId){
+		console.log(houseId);
+		$window.localStorage["buyHouseId"]=houseId;
+		$window.location.href='../buyHouse.html';
+	}
 
 
 	$scope.confirm = function(){
