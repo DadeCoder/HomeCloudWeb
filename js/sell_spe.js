@@ -79,7 +79,7 @@ sellApp.controller('sellOutCtrl',['$scope','$http','$window', function($scope, $
         floor:"",
         area:"",
         houseType:"",
-        rentPrice:""
+        sellPrice:""
     };
     
 
@@ -91,7 +91,7 @@ sellApp.controller('sellOutCtrl',['$scope','$http','$window', function($scope, $
             floor:$scope.house.floor,
             area:$scope.house.area,
             houseType:$scope.house.houseType,
-            rentPrice:$scope.house.rentPrice
+            sellPrice:$scope.house.sellPrice
         }
 
         $http({
