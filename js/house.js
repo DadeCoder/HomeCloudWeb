@@ -34,4 +34,53 @@ houseApp.controller('infoCtrl', function($scope, $http, $window) {
  //         	// $scope.hno = data.length;
  //         });
 
+ 	$http({
+       url:'http://localhost:8090/api/house/isFocus/',
+       method: 'get',  
+       params:{
+            'houseId':houseId,
+      },
+       withCredentials: true
+      }).success(function(response){
+       console.log("success!");
+       console.log(response);
+       if (response == 'true') {
+            var pid = document.getElementById("focusBtn");
+            addClass( pid,"disabled" ); 
+       }
+      }).error(function(response){
+       console.log("error");
+      });
+
+      function hasClass( elements,cName ){ 
+            return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") ); 
+            // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断 
+      }; 
+
+      function addClass( elements,cName ){ 
+            if( !hasClass( elements,cName ) ){ 
+                  elements.className += " " + cName; 
+            }; 
+      }; 
+
+      $scope.focus = function(){
+            console.log(houseId);
+
+            $http({
+             url:'http://localhost:8090/api/house/focus/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             var pid = document.getElementById("focusBtn");
+            addClass( pid,"disabled" ); 
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+
 });
