@@ -5,7 +5,7 @@ var routerApp = angular.module('routerApp', ['ui.router', 'ngGrid', 'BookListMod
  * 这里的run方法只会在angular启动的时候运行一次。
  * @param  {[type]} $rootScope
  * @param  {[type]} $state
- * @param  {[type]} $stateParams
+ * @param  {[type]} $stateParams 
  * @return {[type]}
  */
 routerApp.run(function($rootScope, $state, $stateParams) {
@@ -179,17 +179,31 @@ routerApp.config(function($stateProvider, $urlRouterProvider) {
                 }
             }
         })
-        .state('data-image', {
-            url: '/data-img',
+        .state('data-rent', {
+            url: '/data-rent',
             views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
                 '': {
                     templateUrl: 'tpls/booklist.html'
                 },
-                'booktype@data-image': {
+                'booktype@data-rent': {
                     templateUrl: 'tpls/bookType.html'
                 },
-                'bookgrid@data-image': {
-                    templateUrl: 'tpls/manager-data-image.html'
+                'bookgrid@data-rent': {
+                    templateUrl: 'tpls/manager-data-rent.html'
+                }
+            }
+        })
+        .state('data-sell', {
+            url: '/data-sell',
+            views: { //注意这里的写法，当一个页面上带有多个ui-view的时候如何进行命名和视图模板的加载动作
+                '': {
+                    templateUrl: 'tpls/booklist.html'
+                },
+                'booktype@data-sell': {
+                    templateUrl: 'tpls/bookType.html'
+                },
+                'bookgrid@data-sell': {
+                    templateUrl: 'tpls/manager-data-sell.html'
                 }
             }
         })

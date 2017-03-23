@@ -1,5 +1,5 @@
 /**
- * 这里是书籍列表模块 
+ * 这里是书籍列表模块  
  * @type {[type]}
  */
 var bookListModule = angular.module("BookListModule", []);
@@ -138,6 +138,249 @@ bookListModule.controller('scheduleCtrl', function($scope, $http, $state, $state
 
 });
 
+
+bookListModule.controller('dataSellCtrl', function($scope, $http, $state, $stateParams) {
+        $scope.new = {
+            price:''
+        }
+
+        getData = function(){
+            $http({
+             url:'http://localhost:8090/api/purchaser/getSell/',
+             method: 'get',  
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             $scope.hlist = response;
+            }).error(function(response){
+             console.log("error");
+            });
+        };
+
+        getData();
+
+        function hasClass( elements,cName ){ 
+            return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") ); 
+            // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断 
+      }; 
+
+      function addClass( elements,cName ){ 
+            if( !hasClass( elements,cName ) ){ 
+                  elements.className += " " + cName; 
+            }; 
+      }; 
+
+      $scope.stopSell = function(houseId){
+
+            $http({
+             url:'http://localhost:8090/api/house/stopSell/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+                var pid = document.getElementById("stopBtn");
+                addClass( pid,"disabled" ); 
+            }).error(function(response){
+             console.log("error");
+            });
+      }
+
+      $scope.newBtn = function(houseId){
+
+            console.log($scope.new.price);
+
+            $http({
+             url:'http://localhost:8090/api/house/changePrice/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+                  'price':$scope.new.price
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             $scope.new = {
+                price : ''
+             }
+             getData();
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+
+
+});
+
+bookListModule.controller('dataRentCtrl', function($scope, $http, $state, $stateParams) {
+        $scope.new = {
+            price:''
+        }
+
+        getData = function(){
+            $http({
+             url:'http://localhost:8090/api/purchaser/getRent/',
+             method: 'get',  
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             $scope.hlist = response;
+            }).error(function(response){
+             console.log("error");
+            });
+        };
+
+        getData();
+
+        function hasClass( elements,cName ){ 
+            return !!elements.className.match( new RegExp( "(\\s|^)" + cName + "(\\s|$)") ); 
+            // ( \\s|^ ) 判断前面是否有空格 （\\s | $ ）判断后面是否有空格 两个感叹号为转换为布尔值 以方便做判断 
+      }; 
+
+      function addClass( elements,cName ){ 
+            if( !hasClass( elements,cName ) ){ 
+                  elements.className += " " + cName; 
+            }; 
+      }; 
+
+      $scope.stopRent = function(houseId){
+
+            $http({
+             url:'http://localhost:8090/api/house/stopRent/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+                var pid = document.getElementById("stopBtn");
+                addClass( pid,"disabled" ); 
+            }).error(function(response){
+             console.log("error");
+            });
+      }
+
+      $scope.newBtn = function(houseId){
+
+            console.log($scope.new.price);
+
+            $http({
+             url:'http://localhost:8090/api/house/changePrice/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+                  'price':$scope.new.price
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             $scope.new = {
+                price : ''
+             }
+             getData();
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+});
+
+bookListModule.controller('dataPwdCtrl', function($scope, $http, $state, $stateParams, $window) {
+        $scope.user = {
+            oldPwd:'',
+        }
+
+      $scope.newPwd = function(){
+
+            var oldhash = hex_md5($scope.user.oldPwd);
+            var newhash = hex_md5($scope.password);
+
+            console.log($scope.user.oldPwd);
+            console.log($scope.password);
+
+            $http({
+             url:'http://localhost:8090/api/purchaser/newPwd/',
+             method: 'get',  
+             params:{
+                  'oldhash':oldhash,
+                  'newhash':newhash
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+
+            if (response == 'false') {
+                alert("旧密码不正确");
+            }
+            else{
+                $window.location.href='../../login.html';
+            }
+
+             // $scope.user = {
+             //        oldPwd : '',
+             //        newPwd : ''
+             //     }
+
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+});
+
+bookListModule.controller('dataNickCtrl', function($scope, $http, $state, $stateParams) {
+        $scope.user = {
+            old:'',
+            nick:''
+        }
+
+        getData = function(){
+            $http({
+             url:'http://localhost:8090/api/purchaser/getNick/',
+             method: 'get',  
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             // console.log(response);
+             $scope.user = {
+                old : response
+             }
+            }).error(function(response){
+             console.log("error");
+            });
+        };
+
+        getData();
+
+      $scope.newNick = function(){
+
+            $http({
+             url:'http://localhost:8090/api/purchaser/newNick/',
+             method: 'get',  
+             params:{
+                  'nick':$scope.user.nick
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             if (response == 'true') {
+                 getData();
+            }else{
+                alert("该名称已存在！");
+            }
+             $scope.user = {
+                    nick : ''
+                 }
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+});
 
 bookListModule.controller('focusRentOutCtrl', function($scope, $http, $state, $stateParams) {
     $scope.hlist = [{pic:"pic",name:"Rent",size:20,price:20}];

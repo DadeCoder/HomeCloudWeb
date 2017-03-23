@@ -22,6 +22,7 @@ loginApp.controller('navigation', function($rootScope, $http, $location, $scope,
 
 				//console.log($scope.credentials.username);
 				//console.log($scope.credentials.password);
+				console.log(hash);
 				console.log(h);
 
 				$http.get('http://localhost:8090/login/',{withCredentials: true,headers : h})

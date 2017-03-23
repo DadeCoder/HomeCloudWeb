@@ -1,4 +1,19 @@
-angular.module('RegiApp',[])
+angular.module('testApp',[])
+	.controller('test',['$scope','$http','$window', function($scope, $http, $window){
+	
+		$scope.user = {
+			name:''
+		}
+
+		$scope.test = function(){
+		
+			var hash = hex_md5($scope.user.name);
+			console.log($scope.user.name);
+			console.log(hash);
+		
+		}
+	
+	}])
 	.controller('RegiCtrl',['$scope','$http','$window', function($scope, $http, $window){
 		// $scope.init = function(){
 		// 	$scope.customer = {
