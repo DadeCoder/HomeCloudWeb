@@ -102,4 +102,42 @@ buyHouseApp.controller('infoCtrl', function($scope, $http, $window) {
 
       }
 
+      $http({
+       url:'http://localhost:8090/api/house/isOrder/',
+       method: 'get',  
+       params:{
+            'houseId':houseId,
+      },
+       withCredentials: true
+      }).success(function(response){
+       console.log("success!");
+       console.log(response);
+       if (response == 'false') {
+            var pid = document.getElementById("orderBtn");
+            addClass( pid,"disabled" ); 
+       }
+      }).error(function(response){
+       console.log("error");
+      });
+
+      $scope.order = function(){
+            console.log(houseId);
+
+            $http({
+             url:'http://localhost:8090/api/house/order/',
+             method: 'get',  
+             params:{
+                  'houseId':houseId,
+               },
+             withCredentials: true
+            }).success(function(response){
+             console.log("success!");
+             var pid = document.getElementById("orderBtn");
+            addClass( pid,"disabled" ); 
+            }).error(function(response){
+             console.log("error");
+            });
+
+      }
+
 });

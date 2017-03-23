@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="rentHouseApp">
+<html lang="en" ng-app="rentHouseApp"> 
 <head>
 	<meta charset="UTF-8">
 	<title>House</title>
@@ -20,7 +20,7 @@
 			<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
     			<div class="container-fluid">
     				<div class="navbar-header" style="margin-left: 100px">
-						 <a class="navbar-brand" href="#">HomePlus</a>
+						 <a class="navbar-brand" href="./index_spe.html">HomePlus</a>
     				</div>
 
 					<form class="navbar-form navbar-left avbar-inverse">
@@ -33,11 +33,11 @@
 
 				    <div>
 				        <ul class="nav navbar-nav navbar-right" style="margin-right: 100px">
-				            <li><a href="#">个人中心</a></li>
-				            <li><a href="#">买房</a></li>
-				            <li><a href="#">卖房</a></li>
-				            <li class="active"><a href="#">租房</a></li>
-				            <li><a href="#">退出</a></li>
+				            <li><a href="./manager.html">个人中心</a></li>
+				             <li><a href="./purchar_spe.html">买房</a></li>
+				            <li><a href="./sell_spe.html">卖房·出租</a></li>
+				            <li class="active"><a href="./rent_spe.html">租房</a></li>
+				            <li><a href="./index.html">退出</a></li>
 				        </ul>
 				    </div>
 				</div>
@@ -56,6 +56,8 @@
   				<small>{{house.district}}</small>
   				<button class="btn btn-success pull-right" ng-click="rent()" id="rentBtn">租赁</button>
 				<button class="btn btn-success pull-right" style="margin-right: 20px" ng-click="focus()" id="focusBtn">关注该房源</button>
+				<button class="btn btn-success pull-right" style="margin-right: 20px" ng-click="order()" id="orderBtn">预约看房</button>
+
 
   				</h2>
 

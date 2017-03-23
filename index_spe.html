@@ -26,7 +26,7 @@
 		<![endif]-->
 
 	</head>
-	<body id="page-top">
+	<body id="page-top" ng-controller="topCtrl">
 
 		<!-- Navigation -->
 		<nav class="navbar navbar-default navbar-fixed-top">
@@ -42,7 +42,7 @@
 					<a class="navbar-brand page-scroll" href="#page-top"><img src="images/logo.png" alt="HomePlus logo"></a>
 				</div>
 				<!-- Collect the nav links, forms, and other content for toggling -->
-				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1" ng-controller="topCtrl">
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav navbar-right">
 						<li class="hidden">
 							<a href="#page-top"></a>
@@ -100,26 +100,26 @@
 				<div class="row">
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
-							<h2 data-count="59">59</h2>
+							<h2 data-count="">{{data.users}}</h2>
 							<h6>注册用户</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
-							<h2 data-count="1054">1054</h2>
+							<h2 data-count="">{{data.sellHouses}}</h2>
 							<h6>出售房源</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
-							<h2 data-count="34">34</h2>
+							<h2 data-count="">{{data.rentHouses}}</h2>
 							<h6>出租房源</h6>
 						</div>
 					</div>
 					<div class="col-md-3 mb-sm-30">
 						<div class="counter-item">
-							<h2 data-count="154">154</h2>
-							<h6>成交案例</h6>
+							<h2 data-count="">{{data.doneCases}}</h2>
+							<h6>累计总量</h6>
 						</div>
 					</div>
 				</div>
@@ -142,8 +142,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-1.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Dean & Letter</h2>
-								<p>Branding, Design</p>
+								<h2>Home Plus</h2>
+								<p>为你为家</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-1">View more</a>
 							</figcaption>
 						</figure>
@@ -156,8 +156,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-2.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Startup Framework</h2>
-								<p>Branding, Web Design</p>
+								<h2>Home Plus</h2>
+								<p>真实房源</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
 							</figcaption>
 						</figure>
@@ -170,8 +170,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-3.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Lamp & Velvet</h2>
-								<p>Branding, Web Design</p>
+								<h2>Home Plus</h2>
+								<p>为你而选</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-3">View more</a>
 							</figcaption>
 						</figure>
@@ -186,8 +186,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-4.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Smart Name</h2>
-								<p>Branding, Design</p>
+								<h2>Home Plus</h2>
+								<p>真实价格</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-4">View more</a>
 							</figcaption>
 						</figure>
@@ -200,8 +200,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-5.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Fast People</h2>
-								<p>Branding, Web Design</p>
+								<h2>Home Plus</h2>
+								<p>郑重承诺</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-5">View more</a>
 							</figcaption>
 						</figure>
@@ -214,8 +214,8 @@
 						<figure class="effect-bubba">
 							<img src="images/demo/portfolio-2.jpg" alt="img02" class="img-responsive" />
 							<figcaption>
-								<h2>Kites & Stars</h2>
-								<p>Branding, Web Design</p>
+								<h2>Home Plus</h2>
+								<p>越来越懂你</p>
 								<a href="#" data-toggle="modal" data-target="#Modal-2">View more</a>
 							</figcaption>
 						</figure>
@@ -300,12 +300,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-1">Dean & Letter</h4>
+						<h4 class="modal-title" id="Modal-label-1">Home Plus</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/demo/portfolio-1.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<div class="modal-works"><span>买房</span></div>
+						<p>随时随地任性找房,消息动态推送让您省心，服务承诺让您安心，数据百科锦囊让您感受贴心。漫漫找房路，我们努力为您想更多。</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -320,12 +320,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-2">Startup Framework</h4>
+						<h4 class="modal-title" id="Modal-label-2">Home Plus</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/demo/portfolio-2.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<div class="modal-works"><span>卖房</span></div>
+						<p>真实信息准确同步，楼盘动态一手掌握</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -340,12 +340,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-3">Lamp & Velvet</h4>
+						<h4 class="modal-title" id="Modal-label-3">Home Plus</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/demo/portfolio-3.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<div class="modal-works"><span>租房</span></div>
+						<p>全新房屋，全新生活，给您满意的优质新盘</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -360,12 +360,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-4">Smart Name</h4>
+						<h4 class="modal-title" id="Modal-label-4">Home Plus</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/demo/portfolio-4.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<div class="modal-works"><span>出租</span></div>
+						<p>真实信息准确同步，楼盘动态一手掌握</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
@@ -380,12 +380,12 @@
 				<div class="modal-content">
 					<div class="modal-header">
 						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-						<h4 class="modal-title" id="Modal-label-5">Fast People</h4>
+						<h4 class="modal-title" id="Modal-label-5">Home Plus</h4>
 					</div>
 					<div class="modal-body">
 						<img src="images/demo/portfolio-5.jpg" alt="img01" class="img-responsive" />
-						<div class="modal-works"><span>Branding</span><span>Web Design</span></div>
-						<p>Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe</p>
+						<div class="modal-works"><span>新房</span><span>二手房</span></div>
+						<p>好房源那么多，我们为你精选，链家网会越来越懂你</p>
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>

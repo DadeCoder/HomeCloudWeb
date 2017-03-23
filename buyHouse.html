@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="buyHouseApp">
+<html lang="en" ng-app="buyHouseApp"> 
 <head>
 	<meta charset="UTF-8">
 	<title>House</title>
@@ -33,11 +33,11 @@
 
 				    <div>
 				        <ul class="nav navbar-nav navbar-right" style="margin-right: 100px">
-				            <li><a href="#">个人中心</a></li>
-				            <li class="active"><a href="#">买房</a></li>
-				            <li><a href="#">卖房</a></li>
-				            <li><a href="#">租房</a></li>
-				            <li><a href="#">退出</a></li>
+				            <li><a href="./manager.html">个人中心</a></li>
+				             <li class="active"><a href="./purchar_spe.html">买房</a></li>
+				            <li><a href="./sell_spe.html">卖房·出租</a></li>
+				            <li><a href="./rent_spe.html">租房</a></li>
+				            <li><a href="./index.html">退出</a></li>
 				        </ul>
 				    </div>
 				</div>
@@ -56,6 +56,7 @@
   				<small>{{house.district}}</small> 
   				<button class="btn btn-success pull-right" ng-click="buy()" id="buyBtn">购买</button>
 				<button class="btn btn-success pull-right" style="margin-right: 20px" ng-click="focus()" id="focusBtn">关注该房源</button>
+				<button class="btn btn-success pull-right" style="margin-right: 20px" ng-click="order()" id="orderBtn">预约看房</button>
 
   				</h2>
 
