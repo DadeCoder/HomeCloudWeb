@@ -5,5 +5,10 @@ require(["jquery"],function($){
     })
 });
 
-require(["testRequire"]);
+// require(["testRequire"]);
+// require(['jquery']);
+// require(['angular']);
 
+require(['testRequire'], function(app){
+    angular.bootstrap(document, ['TestApp']);
+});
