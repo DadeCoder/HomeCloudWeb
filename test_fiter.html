@@ -1,111 +1,17 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="MyApp">
+<html lang="en">
 <head>
 	<meta charset="UTF-8">
-	<title>Test</title>
-
+	<title>Document</title>
+	<script data-main="js/main" src="js/require.js"></script>
+	<script type="text/javascript" src="js/require-config.js"></script>
+	<script type="text/javascript" src="lib/testCommon.js"></script>
 </head>
 <body>
-	<!-- <div ng-controller="listCtrl">
-		<div>
-			<a ng-click="showType('')">全部分类</a>
-			<a ng-click="showType(item.type)" ng-repeat="item in listData" ng-bind="item.type">
-			</a>
-		</div>
-		<ul>
-		下面代码中“竖线”为键盘上的分割线，“竖线”提交后不显示，所以用汉字代替！ <li ng-repeat="list in listData | filter: {type: filterType}">
-			<a href="#" ng-bind="list.title"></a>
-			<span ng-bind="list.price">
-			</span>
-		</li>
-		</ul>
-		</div>
- -->
 
-	<div class="bar bar-calm bar-header">
-		<div class="title">新闻分类</div>
-			<button class="button button-balanced cleanbtn" ng-click="clean()">
-				清空
-			</button>
-		</div>
-		<ion-content class="content" scroll="false">
-			<ul class="filter-item">
-				<li>
-					<p>国家地区:</p>
-					<ul>
-						<li ng-repeat="RegionsName in category.Regions" ng-click="onClick(RegionsName.name,RegionsName.checked)">
-							<input type="checkbox" value="RegionsName.name" ng-checked="RegionsName.checked"/>
-							<span>{{RegionsName.cn}}</span>
-						</li>
-					</ul>
-				</li>
-				<li>
-					<p>资本:</p>
-					<ul>
-<li ng-repeat="CapitalsName in category.Capitals" ng-click="onClick(CapitalsName.name,CapitalsName.checked)">
-<input type="checkbox" value="CapitalsName.name" ng-checked="CapitalsName.checked"/>
-<span>{{CapitalsName.cn}}</span>
-</li>
-</ul>
-</li>
-<li>
-<p>领域:</p>
-<ul>
-<li ng-repeat="ScopesName in category.Scopes" ng-click="onClick(ScopesName.name,ScopesName.checked)">
-<input type="checkbox" value="ScopesName.name" ng-checked="ScopesName.checked"/>
-<span>{{ScopesName.cn}}</span>
-</li>
-</ul>
-</li>
-<li>
-<p>经济资料:</p>
-<ul>
-<li ng-repeat="EconomicData in category.EconomicData" ng-click="onClick(EconomicData.name,EconomicData.checked)">
-<input type="checkbox" value="EconomicData.name" ng-checked="EconomicData.checked"/>
-<span>{{EconomicData.cn}}</span>
-</li>
-</ul>
-</li>
-<li>
-<p>中央银行数据:</p>
-<ul>
-<li ng-repeat="CentralBank in category.CentralBank" ng-click="onClick(CentralBank.name,CentralBank.checked)">
-<input type="checkbox" value="CentralBank.name" ng-checked="CentralBank.checked"/>
-<span>{{CentralBank.cn}}</span>
-</li>
-</ul>
-</li>
-</ul>
-<button class="button button-calm confirmbtn" ng-click="infosRef()">确认</button>
-
-
-	<script src="lib/jquery-1.9.1.js"></script>
-	<script src="lib/angular-1.3.0.14/angular.js"></script>
-
-
-<script>
+<div id = "result">
 	
-	// 需引入 angular.js、filter.js 
-	// var app = angular.module('MyApp',[]); 
-
-	// app.controller('listCtrl',function($scope,$http){ 
-	// 	$http({ 
-	// 		method: 'GET', 
-	// 		url: './data/list.json' 
-	// 	}).success(function(data,status,headers,config){ 
-	// 		$scope.listData = data.data.list; 
-	// 		$scope.filterType = ''; 
-	// 		// 筛选门票类型 
-	// 		$scope.showType = function(type){ 
-	// 			$scope.filterType = type; 
-	// 		} 
-	// 	}).error(function(data,status,headers,config){ 
-	// 		console.log('listCtrl Error!'); 
-	// 	}) 
-	// });
-
-
-</script>
-
+</div>
+	
 </body>
 </html>
