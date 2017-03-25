@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" ng-app="passApp">
+<html lang="en" ng-app="denyApp">
 <head>
 	<meta charset="UTF-8">
 	<title>Document</title>
@@ -18,19 +18,15 @@
         </div>
     </div>
 
-    <div class="container" ng-controller="passCtrl">
+    <div class="container" ng-controller="denyCtrl">
     	<div class="row" style="margin-top: 100px">
     		<form role="form"> 
 			  <div class="form-group"> 
-			  	 <label>投资分析：</label>
-			    <textarea class="form-control" rows="3" ng-model="house.analyze"></textarea> 
-			  </div> 
-			  <div class="form-group"> 
-			  	 <label>小区介绍：</label>
-			    <textarea class="form-control" rows="3" ng-model="house.communityInfo"></textarea> 
+			  	 <label>拒绝理由：</label>
+			    <textarea class="form-control" rows="3" ng-model="house.denyInfo"></textarea> 
 			  </div> 
 			  <div class="form-group pull-right"> 
-			  	 <button class="btn btn-success" ng-click="pass()">通过</button>
+			  	 <button class="btn btn-success" ng-click="deny()">确定</button>
 			  </div> 
 			</form>
     	</div>
@@ -45,6 +41,6 @@
     <script src="../lib/angular-ui-router.js"></script>
     <script src="../lib/ui-bootstrap-tpls-0.11.0.js"></script>
     <script src="../js/house/ui-bootstrap-tpls.js"></script>
-    <script src="./js/pass.js"></script>
+    <script src="./js/deny.js"></script>
 </body>
 </html>

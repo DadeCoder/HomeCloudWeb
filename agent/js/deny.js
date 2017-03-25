@@ -1,29 +1,28 @@
-var passApp = angular.module('passApp', []);
+var denyApp = angular.module('denyApp', []);
 
-passApp.controller('passCtrl', function($scope, $http, $window) {
+denyApp.controller('denyCtrl', function($scope, $http, $window) {
 
-	$scope.pass = function(){
+	$scope.deny = function(){
 		console.log($scope.house);
 
-		var houseId = $window.localStorage["passAccess"];
+		var houseId = $window.localStorage["denyAccess"];
 
 		var data = {
 			houseId : houseId,
-			analyze : $scope.house.analyze,
-			communityInfo : $scope.house.communityInfo
+			denyInfo : $scope.house.denyInfo
 		}
 
 		console.log(data);
 
 		$http({
-	     url:'http://localhost:8090/api/agent/pass/',
+	     url:'http://localhost:8090/api/agent/deny/',
 	     method: 'Post',  
 	     data:data,
 	     withCredentials: true
 	    }).success(function(response){
 	     console.log("success!");
 	     // console.log(response);
-	     alert("已审核：通过");
+	     alert("已审核：不通过");
 	     $window.location.href='./index.html';
 
 	    }).error(function(response){

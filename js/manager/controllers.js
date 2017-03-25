@@ -405,7 +405,23 @@ bookListModule.controller('dataNickCtrl', function($scope, $http, $state, $state
 });
 
 bookListModule.controller('focusRentOutCtrl', function($scope, $http, $state, $stateParams) {
-    $scope.hlist = [{pic:"pic",name:"Rent",size:20,price:20}];
+    // $scope.hlist = [{pic:"pic",name:"Rent",size:20,price:20}];
+
+    getData = function(){
+        $http({
+         url:'http://localhost:8090/api/purchaser/getAllRent/',
+         method: 'get',  
+         withCredentials: true
+        }).success(function(response){
+         console.log("success!");
+         // console.log(response);
+         $scope.hlist = response;
+        }).error(function(response){
+         console.log("error");
+        });
+    };
+
+    getData();
 
 });
 
@@ -436,7 +452,25 @@ bookListModule.controller('focusRentCtrl', function($scope, $http, $state, $stat
 });
 
 bookListModule.controller('focusSellCtrl', function($scope, $http, $state, $stateParams) {
-    $scope.hlist = [{pic:"pic",name:"Sell",size:20,price:20},{pic:"pic",name:"name",size:20,price:20},{pic:"pic",name:"name",size:20,price:20},{pic:"pic",name:"name",size:20,price:20}];
+    // $scope.hlist = [{pic:"pic",name:"Sell",size:20,price:20},{pic:"pic",name:"name",size:20,price:20},{pic:"pic",name:"name",size:20,price:20},{pic:"pic",name:"name",size:20,price:20}];
+
+    getData = function(){
+        $http({
+         url:'http://localhost:8090/api/purchaser/getAllSell/',
+         method: 'get',  
+         withCredentials: true
+        }).success(function(response){
+         console.log("success!");
+         // console.log(response);
+         $scope.hlist = response;
+        }).error(function(response){
+         console.log("error");
+        });
+    };
+
+    getData();
+
+
 
 });
 

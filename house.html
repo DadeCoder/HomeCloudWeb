@@ -20,7 +20,7 @@ overflow:hidden;
 			<nav class="navbar navbar-default navbar-static-top navbar-inverse" role="navigation">
     			<div class="container-fluid">
     				<div class="navbar-header" style="margin-left: 100px">
-						 <a class="navbar-brand" href="#">HomePlus</a>
+						 <a class="navbar-brand" href="./index_spe.html">HomePlus</a>
     				</div>
 
 					<form class="navbar-form navbar-left avbar-inverse">
@@ -33,11 +33,11 @@ overflow:hidden;
 
 				    <div>
 				        <ul class="nav navbar-nav navbar-right" style="margin-right: 100px">
-				            <li><a href="#">个人中心</a></li>
-				            <li class="active"><a href="#">买房</a></li>
-				            <li><a href="#">卖房</a></li>
-				            <li><a href="#">租房</a></li>
-				            <li><a href="#">退出</a></li>
+				            <li><a href="./manager.html">个人中心</a></li>
+				            <li class="active"><a href="./purchar_spe.html">买房</a></li>
+				            <li><a href="./sell_spe.html">卖房·出租</a></li>
+				            <li><a href="./rent_spe.html">租房</a></li>
+				            <li><a href="./config.html">退出</a></li>
 				        </ul>
 				    </div>
 				</div>
@@ -85,6 +85,9 @@ overflow:hidden;
 							<div class="row" style="padding-bottom:5px">
 								<span class="text-success">楼层：</span>
 								<span class="text-info">{{house.floor}}</span>
+
+								<span class="text-success col-md-offset-4">状态：</span>
+								<span class="text-info">{{house.status}}</span>
 							</div>
 						</h4>
 						<h4>
