@@ -19,7 +19,7 @@ loginApp.controller('navigation', function($rootScope, $http, $location, $scope,
 				console.log(hash);
 				console.log(h);
 
-				$http.get('http://localhost:8090/login/',{withCredentials: true,headers : h})
+				$http.get('http://localhost:8090/agent_login/',{withCredentials: true,headers : h})
 					.success(function(response) {
 						console.log(response.data);
 						// $window.location.href='/test_spring_sec.html'; 
