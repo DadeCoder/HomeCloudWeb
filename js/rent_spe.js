@@ -1,6 +1,5 @@
 var RentApp = angular.module("RentApp",['ui.bootstrap']);
 
-
 RentApp.controller('cdtCtrl', function($scope, $http, $window) {
 
 	$scope.condition = ["区域不限","售价不限","面积不限","房型不限","楼层不限"];

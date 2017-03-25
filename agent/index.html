@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="indexApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/index.css" rel="stylesheet">
+
+</head>
+<body>
+
+	<div class="navbar navbar-duomi navbar-static-top" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="" id="logo">
+                后台管理系统
+                </a>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="col-md-2">
+                <ul id="main-nav" class="nav nav-tabs nav-stacked" style="">
+                    <li class="active">
+                        <a href="#">
+                            <i class="glyphicon glyphicon-th-large"></i>
+                            首页         
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#systemSetting" class="nav-header collapsed" data-toggle="collapse">
+                            <i class="glyphicon glyphicon-cog"></i>
+                            系统审核
+                               <span class="pull-right glyphicon glyphicon-chevron-down"></span>
+                        </a>
+                        <ul id="systemSetting" class="nav nav-list collapse secondmenu" style="height: 0px;">
+                            <li><a ui-sref="rent_access"><i class="glyphicon glyphicon-user"></i>出租审核</a></li>
+                            <li><a ui-sref="sell_access"><i class="glyphicon glyphicon-th-list"></i>卖房审核</a></li>
+<!--                             <li><a href="#"><i class="glyphicon glyphicon-asterisk"></i>角色管理</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-edit"></i>修改密码</a></li>
+                            <li><a href="#"><i class="glyphicon glyphicon-eye-open"></i>日志查看</a></li> -->
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="glyphicon glyphicon-credit-card"></i>
+                            人员管理        
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="glyphicon glyphicon-globe"></i>
+                            系统日志
+                            <span class="label label-warning pull-right"></span>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="">
+                            <i class="glyphicon glyphicon-calendar"></i>
+                            数据统计
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <i class="glyphicon glyphicon-fire"></i>
+                            关于系统
+                        </a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- <div class="col-md-10">
+                主窗口
+            </div> -->
+            <div ui-view></div>
+        </div>
+    </div>
+
+	<script src="../lib/jquery-1.9.1.js"></script>
+	<script src="../lib/angular-1.3.0.14/angular.js"></script>
+	<script src="../js/bootstrap.js"></script>
+    <script src="../lib/angular-ui-router.js"></script>
+    <script src="../lib/ui-bootstrap-tpls-0.11.0.js"></script>
+    <script src="../js/house/ui-bootstrap-tpls.js"></script>
+    <script src="js/index.js"></script>
+</body>
+</html>
