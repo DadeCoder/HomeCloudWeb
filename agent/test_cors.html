@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="testApp">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link href="../css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+	
+	<form ng-controller="testCtrl">
+		<button class="btn btn-success" ng-click="go()">go</button>
+	</form>
+	
+
+
+	<script src="../lib/jquery-1.9.1.js"></script>
+    <script src="../js/bootstrap.js"></script>
+	<script src="../lib/angular-1.3.0.14/angular.js"></script>
+	<script>
+		var testApp = angular.module("testApp",[]);
+		testApp.controller('testCtrl', function($scope, $http){
+			$scope.go = function(){
+				$http({
+               url:'http://localhost:8083/test/',
+               method: 'get', 
+               withCredentials: true
+              }).success(function(response){
+               console.log("success!");
+               console.log(response);
+              }).error(function(response){
+               console.log("error");
+               console.log(response);
+              });
+			}
+
+			
+		})
+	</script>
+</body>
+</html>
